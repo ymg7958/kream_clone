@@ -1,0 +1,48 @@
+const cartItems = [
+  {
+    id: "1",
+    brand: "Nike",
+    title: "Nike x Kasina Air Max 1SP Won-Ang Particle Grey",
+    price: "399.99",
+    img: "https://kream-phinf.pstatic.net/MjAyMjA1MjNfMjQz/MDAxNjUzMjY5Njk1MzM5.zUu3YGORkzYnLYWUgT22Veyu7-No-8UqzzB0FVW9aDQg.gPNypsbXuY4VRE79VvEU3c-JhxnSyDs99wC8r7CsWK4g.PNG/a_6b45dc7b4f754409bb1bc3b9caa569dd.png",
+    amount: 1,
+    size: 270,
+  },
+  {
+    id: "2",
+    brand: "Nike",
+    title: "Nike Dunk Low Retro Black",
+    price: "123.99",
+    img: "https://kream-phinf.pstatic.net/MjAyMTA3MjhfMjIg/MDAxNjI3NDQxMDA1NjE5.HOgIYywGZaaBJDqUzx2OnX9HAxoOWPvuWHqUn_LZGcgg.VYIuOfA5_GgjBGRowv6dmQuAOPtUvmAxbGpOyUCOCtYg.PNG/p_9d8ed1a74d2540ab9842e63363607bf4.png",
+    amount: 1,
+    size: 270,
+  },
+  {
+    id: "3",
+    brand: "Jordan",
+    title: "Jordan 1 Retro High OG Black Mocha",
+    price: "555.99",
+    img: "https://kream-phinf.pstatic.net/MjAyMDEwMjJfOCAg/MDAxNjAzMzQwOTUzNzMx.nCU7Bumo43r7JZcTRjq4blFOcj33dPIxNYW-_94RtWgg.rJwsoEL3W-f7pgpwfYISb-0HBItIWL04h7p8Ixyp8CUg.PNG/p_4cedd884b4a3427ca616bc31b3bf2867.png",
+    amount: 1,
+    size: 270,
+  },
+  {
+    id: "4",
+    brand: "Nike",
+    title: "Nike Air Force 107 Low White",
+    price: "513.99",
+    img: "https://kream-phinf.pstatic.net/MjAyMDEwMjJfMjYy/MDAxNjAzMzMzOTM3NDQ4.hA5DSH6wrREy9wUF3CJlxMlYcbOQm3REeJBs5Pg5ycYg.sVU-CCPnedVjQsGaiwiT31Mab4lVvlI9EMTVCbYfjN8g.PNG/p_12831_0_ead2bb299f7448ef95315f1f364d4f3f.png?type=m_webp",
+    amount: 1,
+    size: 270,
+  },
+  // {
+  //   id: "5",
+  //   brand: "Nike",
+  //   title: "Nike x Kasina Air Max 1SP Won-Ang Particle Grey",
+  //   price: "399.99",
+  //   img: "https://kream-phinf.pstatic.net/MjAyMTEyMjBfMTA4/MDAxNjM5OTg0MjQxMTYy.F0BGHeY9Lo5okE_K4MrvzWTvO5XQ72TPW7BDhqWZUHUg.0lz1wS4mL94VUWaFzY9RIoiHuARng_qo5Ss7Eir-xk0g.PNG/a_1fef41f2dc8a4c5f9ce69aff036113e3.png?type=m_webp",
+  //   amount: 1,
+  //   size: 270,
+  // },
+];
+export default cartItems;
