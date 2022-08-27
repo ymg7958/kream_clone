@@ -57,7 +57,7 @@ export const Bookmark = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="h-[20px] w-[20px]"
+      className="h-[20px] w-[20px]"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -76,7 +76,7 @@ export const DownIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="h-4 w-4"
+      className="h-4 w-4"
       fill="none"
       viewBox="0 0 24 12"
       stroke="currentColor"

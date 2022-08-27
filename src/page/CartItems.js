@@ -1,4 +1,4 @@
-import { removeItem } from "../features/cart/CartSlice";
+// import { removeItem } from "../features/cart/CartSlice";
 import { useDispatch } from "react-redux";
 
 const CartItem = ({ id, amount, brand, img, price, title, size }) => {
@@ -22,7 +22,7 @@ const CartItem = ({ id, amount, brand, img, price, title, size }) => {
           </span>
           <button
             className="text-xs text-red-400 hover:text-red-700"
-            onClick={() => dispatch(removeItem(id))}
+            // onClick={() => dispatch(removeItem(id))}
           >
             삭제
           </button>

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import products from "../assets/products";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import brandItems from "../assets/brandItems";
+import { addToCart } from "../features/cart/CartSlice";
 
 const ListItem = () => {
   const [productsList, setProductsList] = useState([]);
   const [moreProducts, setMoreProducts] = useState(8);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,6 +23,11 @@ const ListItem = () => {
     setMoreProducts((prevValue) => prevValue + 8);
   };
   //   issue : 삼품정보페이지 뒤로가기 버튼시 불러온 이전데이터가 사라지고 기본값 데이터(products)만 출력됨.
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    console.log(product);
+  };
 
   return (
     <main className="mt-[50px] w-full">
@@ -39,34 +45,53 @@ const ListItem = () => {
               key={product.id}
               className="relative inline-block align-top my-[20px] px-[12px] w-[25%] ease-in-out "
             >
-              <Link
-                to={`/product/${product.id}`}
-                className="block bg-white rounded-[12px] "
-              >
-                <div className="">
-                  <div className="overflow-hidden relative rounded-[8px] bg-[#ebf0f5]">
-                    <img
-                      src={product.image_url}
-                      alt="1"
-                      className="object-fit"
+              <div className="relative">
+                <button
+                  className="absolute top-0 right-0 p-3 z-10"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 5a2 2 0 012-2h10a2 0 0 012 2v16l-7-3.5L5 21V5z"
                     />
+                  </svg>
+                </button>
+                <Link
+                  to={`/product/${product.id}`}
+                  className="block bg-white rounded-[12px] "
+                >
+                  <div className="relative">
+                    <div className="overflow-hidden relative rounded-[8px] bg-[#ebf0f5] ">
+                      <img
+                        src={product.image_url}
+                        alt="1"
+                        className="object-fit"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="mt-3 block">
-                  {/* <p className="overflow-hidden inline-block align-top leading-[17px] pt-[2px] font-bold text-[#333] whitespace-nowrap text-ellipsis border-b-[1px] border-[#222]">
-                    {product.brand}
-                  </p> */}
-                  <p className="leading-[17px] mt-[8.5px] max-h-[34px]  overflow-hidden text-ellipsis text-[#222] text-[14px]">
-                    {product.productName}
+                </Link>
+              </div>
+
+              <div className="mt-3 block">
+                <p className="leading-[17px] mt-[8.5px] max-h-[34px]  overflow-hidden text-ellipsis text-[#222] text-[14px]">
+                  {product.productName}
+                </p>
+                <div className="pt-[7px]">
+                  <p className="inline-block leading-[17px] text-[15px] font-bold tracking-[-.04px] ">
+                    {product.price}
+                    <span>원</span>
                   </p>
-                  <div className="pt-[7px]">
-                    <p className="inline-block leading-[17px] text-[15px] font-bold tracking-[-.04px] ">
-                      {product.price}
-                      <span>원</span>
-                    </p>
-                  </div>
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </ul>
