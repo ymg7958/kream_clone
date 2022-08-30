@@ -7,14 +7,18 @@ import { addToCart } from "../features/cart/CartSlice";
 const ListItem = () => {
   const [productsList, setProductsList] = useState([]);
   const [moreProducts, setMoreProducts] = useState(8);
+  // const [bookmarkActive, setBookMarkActive] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const URL = "http://localhost:3001/products";
-      const { data } = await axios.get(URL);
-
-      setProductsList(data);
+      try {
+        const URL = "http://localhost:3001/products";
+        const res = await axios.get(URL);
+        setProductsList(res.data);
+      } catch (err) {
+        console.log(err.message);
+      }
     };
     fetchProducts();
   }, []);
@@ -47,8 +51,9 @@ const ListItem = () => {
             >
               <div className="relative">
                 <button
-                  className="absolute top-0 right-0 p-3 z-10"
                   onClick={() => handleAddToCart(product)}
+                  className="absolute top-0 right-0 p-3 z-10"
+                  type="button"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
