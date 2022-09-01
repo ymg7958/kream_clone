@@ -64,11 +64,3 @@ const CartContainer = () => {
 };
 
 export default CartContainer;
-
-// <ul className="flex flex-col p-5">
-//      {
-//      {cartItems.map((item) => {
-//         return <CartItems key={item.id} {...item} />;
-//       })}
-//      }
-//      </ul>

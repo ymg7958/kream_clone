@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { authSlice } from "../features/auth/authSlice";
 
 const PrivateRoutes = () => {
   const isLoggedIn = false;

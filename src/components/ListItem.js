@@ -7,7 +7,7 @@ import { addToCart } from "../features/cart/CartSlice";
 const ListItem = () => {
   const [productsList, setProductsList] = useState([]);
   const [moreProducts, setMoreProducts] = useState(8);
-  // const [bookmarkActive, setBookMarkActive] = useState([]);
+  const [bookmarkActive, setBookMarkActive] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,11 +26,9 @@ const ListItem = () => {
   const showMoreProducts = () => {
     setMoreProducts((prevValue) => prevValue + 8);
   };
-  //   issue : 삼품정보페이지 뒤로가기 버튼시 불러온 이전데이터가 사라지고 기본값 데이터(products)만 출력됨.
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    console.log(product);
   };
 
   return (
